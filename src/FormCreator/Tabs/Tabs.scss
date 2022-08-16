@@ -11,8 +11,6 @@
   align-items: stretch;
   justify-content: start;
 
-
-
   .tab {
     text-align: center;
     border: 1px solid $border_color;
@@ -30,7 +28,6 @@
       background: $form_background;
       cursor: default;
       border-bottom: 1px solid $form_background;
-
     }
   }
 }
