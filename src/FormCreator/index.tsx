@@ -14,6 +14,8 @@ export default ({ className }: FormCreatorProps) => {
     'config' as Mode
   );
 
+  const [config, setConfig] = useState('');
+
   return (
     <div className={clsx('wrapper', className)}>
       <Tabs mode={mode} onSetMode={setMode} />

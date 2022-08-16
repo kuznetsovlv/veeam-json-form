@@ -2,20 +2,21 @@
 @import '../../constants';
 
 .tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+
   width: 100%;
   height: $tabs_height;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: start;
 
   .tab {
+    flex: 200px 0 0;
     text-align: center;
     border: 1px solid $border_color;
     border-radius: 7px 7px 0 0;
-    flex: 200px 0 0;
 
     font-size: 1.1rem;
     line-height: 100%;

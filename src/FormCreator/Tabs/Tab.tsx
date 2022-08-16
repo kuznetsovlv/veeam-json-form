@@ -8,10 +8,9 @@ interface TabProps {
   children: string;
   mode: Mode;
   selected: boolean;
-  onClick: (_: Mode) => void;
+  onClick: (m: Mode) => void;
 }
 
-// eslint-disable-next-line react/display-name
 export default ({ children, mode, selected, onClick }: TabProps) => (
   <div className={clsx('tab', { selected })} onClick={() => onClick(mode)}>
     {children}

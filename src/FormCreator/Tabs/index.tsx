@@ -6,7 +6,7 @@ import './Tabs.scss';
 
 interface TabsProps {
   mode: Mode;
-  onSetMode: (_: Mode) => void;
+  onSetMode: (m: Mode) => void;
 }
 
 export default ({ mode, onSetMode }: TabsProps) => (
