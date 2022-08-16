@@ -1,0 +1,9 @@
+@import './colors';
+
+.App {
+  margin: auto;
+  padding: 0;
+  height: 100%;
+  width: 1024px;
+  background: $app_background;
+}
