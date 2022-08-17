@@ -12,7 +12,7 @@ export default ({ data, onConfigChange }: FormProps) => {
   const [currentData, setCurrentData] = useState(data);
 
   useEffect(
-    () => () => onConfigChange(JSON.stringify(currentData)),
+    () => () => onConfigChange(JSON.stringify(currentData, null, 4)),
     [currentData]
   );
 
