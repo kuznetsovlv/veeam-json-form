@@ -9,7 +9,7 @@ import clsx from 'clsx';
 
 import ConfigEditor from './ConfigEditor';
 import Tabs from './Tabs';
-import { Mode } from './types';
+import { Mode, ConfigData, Nullable } from './types';
 import './FormCreator.scss';
 
 interface FormCreatorProps {
@@ -23,13 +23,13 @@ export default ({ className }: FormCreatorProps) => {
 
   const [config, setConfig] = useState('');
 
-  const configData = useMemo(() => {
+  const configData: Nullable<ConfigData> = useMemo(() => {
     if (!config) {
       return null;
     }
 
     try {
-      return JSON.parse(config);
+      return JSON.parse(config) as ConfigData;
     } catch (_) {
       return null;
     }
