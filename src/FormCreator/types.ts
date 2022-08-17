@@ -1,12 +1,6 @@
 export type Mode = 'config' | 'result';
 
-export type FieldType =
-  | 'number'
-  | 'string'
-  | 'text'
-  | 'boolean'
-  | 'date'
-  | 'enum';
+export type FieldType = 'int' | 'string' | 'text' | 'boolean' | 'date' | 'enum';
 
 export interface FieldCommon {
   label?: string;
@@ -21,7 +15,7 @@ export interface BUTTON {
 
 export interface INT {
   value?: number;
-  type: 'number';
+  type: 'int';
 }
 
 export interface STRING {
@@ -55,10 +49,16 @@ export interface ENUM {
   type: 'enum';
 }
 
+export type CombinedFieldType = Field<
+  INT | STRING | TEXT | BOOLEAN | DATE | ENUM
+>;
+
 export interface ConfigData {
   title?: string;
-  fields?: Field<INT | STRING | TEXT | BOOLEAN | DATE | ENUM>[];
+  fields?: CombinedFieldType[];
   buttons?: BUTTON[];
 }
 
 export type Nullable<T> = T | null;
+
+export type ValueType = string | number | boolean | null;

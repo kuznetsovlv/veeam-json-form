@@ -1,0 +1,13 @@
+{
+  "title": "TITLE",
+  "fields": [
+    {
+      "label": "string field",
+      "type": "string"
+    },
+    {
+      "label": "int field",
+      "type": "int"
+    }
+  ]
+}

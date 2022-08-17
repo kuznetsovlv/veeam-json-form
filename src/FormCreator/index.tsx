@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import ConfigEditor from './ConfigEditor';
 import Form from './Form';
 import Tabs from './Tabs';
-import { Mode, ConfigData, Nullable } from './types';
+import type { Mode, ConfigData, Nullable } from './types';
 import './FormCreator.scss';
 
 interface FormCreatorProps {

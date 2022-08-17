@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import { Mode } from '../types';
+import type { Mode } from '../types';
 import './Tabs.scss';
 
 interface TabProps {

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
-import { ConfigData } from '../types';
+import type { ConfigData, ValueType } from '../types';
+import FormItem from './FormItem';
 import './Form.scss';
 
 interface FormProps {
@@ -18,12 +19,35 @@ export default ({ data, onConfigChange }: FormProps) => {
 
   const { title, fields = [], buttons = [] } = currentData;
 
-  console.log(fields, buttons);
+  const handleChange = useCallback(
+    (value: ValueType, index: number) => {
+      const { fields = [] } = currentData;
+      setCurrentData({
+        ...currentData,
+        // @ts-ignore
+        fields: fields.map((prop, i) =>
+          i === index ? { ...prop, value } : prop
+        )
+      });
+    },
+    [currentData, setCurrentData]
+  );
 
   return (
     <form className="form">
       <header className="form__title">{title}</header>
-      <div className="form__fields">Fields</div>
+      <div className="form__fields">
+        {fields.map((props, index) => (
+          <FormItem
+            {...props}
+            key={index} // Of course, it is not recommended to use index as a key, but I suggest that user may forget to add an id into field's config,
+            //or he can make mistake and create non-unique id. Also while this form is rendered it is impossible to change fields collection.
+            // So by my opinion there is no problem to use index as key here.
+            index={index}
+            onChange={handleChange}
+          />
+        ))}
+      </div>
       <div className="form__buttons">Buttons</div>
     </form>
   );

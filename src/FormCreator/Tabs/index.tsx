@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Mode } from '../types';
+import type { Mode } from '../types';
 import Tab from './Tab';
 import './Tabs.scss';
 

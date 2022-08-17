@@ -23,6 +23,11 @@ $block_margin: 10px;
   }
 
   &__fields {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     padding: $block_padding;
     margin: $block_margin 0;
     height: calc(100% - $buttons_height - $title_height - 2 * $block_margin - 6 * $block_padding);
@@ -31,6 +36,11 @@ $block_margin: 10px;
 
 
   &__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
     padding: $block_padding;
     margin-top: $block_margin;
     height: $buttons_height;

@@ -1,0 +1,33 @@
+@import '../../colors';
+
+$field_margin: 7px;
+$label_margin: 2px;
+
+.form-item {
+  margin: 0;
+  padding: 0;
+  &:not(:last-child) {
+    margin-bottom: $field_margin;
+  }
+
+  &:not(:first-child) {
+    margin-top: $field_margin;
+  }
+
+  &__label {
+    display: block;
+    font-size: 0.8rem;
+    color: $label_color;
+    line-height: 100%;
+    margin: 0 0 $label_margin 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__field {
+    width: 100%;
+    margin: $label_margin 0 0 0;
+  }
+}
