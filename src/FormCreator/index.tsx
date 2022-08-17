@@ -1,10 +1,5 @@
-import React, {
-  Dispatch,
-  SetStateAction,
-  useState,
-  useMemo,
-  useEffect
-} from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import clsx from 'clsx';
 
 import ConfigEditor from './ConfigEditor';

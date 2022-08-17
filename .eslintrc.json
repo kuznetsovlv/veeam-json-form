@@ -77,6 +77,9 @@
     "jsx-a11y/no-autofocus": ["off"],
     "jsx-a11y/no-noninteractive-element-interactions": ["off"],
     "no-unused-vars": ["off"],
-    "@typescript-eslint/no-unused-vars": ["warn"]
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "@typescript-eslint/consistent-type-imports": ["error"],
+    "no-duplicate-imports": ["off"],
+    "@typescript-eslint/no-duplicate-imports": ["error"]
   }
 }
