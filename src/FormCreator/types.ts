@@ -57,7 +57,7 @@ export interface ENUM {
 
 export interface ConfigData {
   title?: string;
-  items?: Field<INT | STRING | TEXT | BOOLEAN | DATE | ENUM>[];
+  fields?: Field<INT | STRING | TEXT | BOOLEAN | DATE | ENUM>[];
   buttons?: BUTTON[];
 }
 

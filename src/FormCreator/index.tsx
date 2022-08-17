@@ -8,6 +8,7 @@ import React, {
 import clsx from 'clsx';
 
 import ConfigEditor from './ConfigEditor';
+import Form from './Form';
 import Tabs from './Tabs';
 import { Mode, ConfigData, Nullable } from './types';
 import './FormCreator.scss';
@@ -47,6 +48,9 @@ export default ({ className }: FormCreatorProps) => {
       <div className="main">
         {mode === 'config' && (
           <ConfigEditor value={config} onChange={setConfig} />
+        )}
+        {mode === 'result' && !!configData && (
+          <Form data={configData} onConfigChange={setConfig} />
         )}
       </div>
     </div>

@@ -1,0 +1,39 @@
+@import "../../colors";
+
+$title_height: 36px;
+$buttons_height: 50px;
+$block_padding: 2px;
+$block_margin: 10px;
+
+.form {
+  margin: 0;
+  padding: 5px;
+  border: 1px solid $border_color;
+  border-radius: 2px;
+  height: 100%;
+  box-sizing: border-box;
+
+  &__title {
+    padding: $block_padding;
+    margin-bottom: $block_margin;
+    height: $title_height;
+    font-size: 1.5rem;
+    line-height: 100%;
+    text-align: center;
+  }
+
+  &__fields {
+    padding: $block_padding;
+    margin: $block_margin 0;
+    height: calc(100% - $buttons_height - $title_height - 2 * $block_margin - 6 * $block_padding);
+    overflow-y: auto;
+  }
+
+
+  &__buttons {
+    padding: $block_padding;
+    margin-top: $block_margin;
+    height: $buttons_height;
+    overflow-x: auto;
+  }
+}
