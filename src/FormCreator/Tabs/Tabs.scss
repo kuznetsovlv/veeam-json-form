@@ -21,13 +21,21 @@
     font-size: 1.1rem;
     line-height: 100%;
     padding: 5px;
-    cursor: pointer;
     position: relative;
     top: 1px;
 
+    color: $tab_text;
+
+    &.active {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      color: $disabled_text;
+    }
+
     &.selected {
       background: $form_background;
-      cursor: default;
       border-bottom: 1px solid $form_background;
     }
   }
