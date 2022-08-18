@@ -33,7 +33,7 @@ $label_margin: 2px;
     margin: $label_margin 0 0 0;
 
     border: 1px solid $input_border_color;
-    border-radius: 3px;
+    border-radius: $input_border_radius;
     padding: 2px 5px;
     background: $input_background;
     outline: none;

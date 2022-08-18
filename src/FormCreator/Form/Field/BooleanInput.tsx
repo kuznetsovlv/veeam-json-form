@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import clsx from 'clsx';
 // @ts-ignore
 import { v4 } from 'uuid';
 
@@ -11,6 +12,7 @@ type BooleanInputInputProps = Omit<Field<BOOLEAN>, 'type'> & {
 };
 
 export default ({
+  autoFocus = false,
   disabled,
   form,
   label,
@@ -21,15 +23,12 @@ export default ({
 }: BooleanInputInputProps) => {
   const id = useMemo(() => v4(), []);
   return (
-    <div className="boolean-input">
-      {label && (
-        <label htmlFor={id} className="boolean-input__label">
-          {label}
-        </label>
-      )}
+    <label className="boolean-input" htmlFor={id}>
+      {label}
       <input
+        autoFocus={autoFocus}
         checked={value}
-        className="boolean-input__input"
+        className={clsx('boolean-input__input', { labeled: !!label })}
         disabled={disabled}
         id={id}
         form={form}
@@ -38,6 +37,6 @@ export default ({
         type="checkbox"
         onChange={() => onChange(!value)}
       />
-    </div>
+    </label>
   );
 };

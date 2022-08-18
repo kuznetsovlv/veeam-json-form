@@ -7,19 +7,13 @@ $size: 18px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: stretch;
+  align-items: center;
   justify-content: flex-start;
   height: $size;
-
-  &__label {
-    display: flex;
-    align-items: center;
-    font-size: $label_font_size;
-    color: $label_color;
-    line-height: 100%;
-    vertical-align: middle;
-    margin: 0 5px 0 0;
-  }
+  width: 100%;
+  font-size: $label_font_size;
+  color: $label_color;
+  line-height: 100%;
 
   &__input {
     flex: $size 0 0;
@@ -29,7 +23,15 @@ $size: 18px;
     margin: 0;
     border: 1px solid $input_border_color;
     outline: none;
-    border-radius: 2px;
+    border-radius: $input_border_radius;
     background: $input_background;
+
+    &.labeled {
+      margin-left: 5px;
+    }
+
+    &:focus {
+      outline: 1px solid $input_focus_outline;
+    }
   }
 }

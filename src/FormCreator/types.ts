@@ -44,6 +44,7 @@ export interface TEXT {
 
 export interface BOOLEAN {
   value?: boolean;
+  autoFocus?: boolean;
 }
 
 export interface DATE {
