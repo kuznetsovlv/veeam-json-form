@@ -21,6 +21,8 @@ $size: 18px;
     height: $size;
     padding: 0;
     margin: 0;
+
+    // TODO: These styles do not afford the field. If I had enough time, I would create special checkbox
     border: 1px solid $input_border_color;
     outline: none;
     border-radius: $input_border_radius;
