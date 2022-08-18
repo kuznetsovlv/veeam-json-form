@@ -1,6 +1,6 @@
 @import '../../colors';
 
-$field_margin: 7px;
+$field_margin: 8px;
 $label_margin: 2px;
 
 .form-item {
@@ -16,7 +16,7 @@ $label_margin: 2px;
 
   &__label {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: $label_color;
     line-height: 100%;
     margin: 0 0 $label_margin 0;
@@ -32,8 +32,11 @@ $label_margin: 2px;
     margin: $label_margin 0 0 0;
 
     border: 1px solid $input_border_color;
+    border-radius: 3px;
+    padding: 2px 5px;
     background: $input_background;
     outline: none;
+    font-size: 1.1rem;
 
     &:focus {
       outline: 1px solid $input_focus_outline;
