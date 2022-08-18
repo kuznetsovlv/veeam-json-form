@@ -1,9 +1,20 @@
 {
+  "id": "form",
   "title": "TITLE",
   "fields": [
     {
       "label": "string field",
-      "type": "string"
+      "type": "string",
+      "value": "cxvcv",
+      "name": "first",
+      "readOnly": true
+    },
+    {
+      "label": "second string field",
+      "type": "string",
+      "value": "second",
+      "name": "second",
+      "autoComplete": true
     },
     {
       "label": "int field",

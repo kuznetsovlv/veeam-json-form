@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import type { ConfigData, ValueType } from '../types';
+import type { ConfigData, Nullable, ValueType } from '../types';
 import FormItem from './FormItem';
 import './Form.scss';
 
@@ -17,10 +17,10 @@ export default ({ data, onConfigChange }: FormProps) => {
     [currentData]
   );
 
-  const { title, fields = [], buttons = [] } = currentData;
+  const { id, title, fields = [], buttons = [] } = currentData;
 
   const handleChange = useCallback(
-    (value: ValueType, index: number) => {
+    (value: Nullable<ValueType>, index: number) => {
       const { fields = [] } = currentData;
       setCurrentData({
         ...currentData,
@@ -34,7 +34,7 @@ export default ({ data, onConfigChange }: FormProps) => {
   );
 
   return (
-    <form className="form">
+    <form className="form" id={id}>
       <header className="form__title">{title}</header>
       <div className="form__fields">
         {fields.map((props, index) => (
@@ -44,6 +44,7 @@ export default ({ data, onConfigChange }: FormProps) => {
             //or he can make mistake and create non-unique id. Also while this form is rendered it is impossible to change fields collection.
             // So by my opinion there is no problem to use index as key here.
             index={index}
+            form={id}
             onChange={handleChange}
           />
         ))}

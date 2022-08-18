@@ -1,23 +1,34 @@
 import React, { useCallback } from 'react';
 
-import type { CombinedFieldType, ValueType } from '../types';
+import type { CombinedFieldType, Nullable, ValueType } from '../types';
+import Field from './Field';
 import './FormItem.scss';
 
 type FormItemProps = CombinedFieldType & {
   index: number;
-  onChange: (v: ValueType, index: number) => void;
+  form?: string;
+  onChange: (v: Nullable<ValueType>, index: number) => void;
 };
 
-export default ({ label = '', index, onChange, ...props }: FormItemProps) => {
-  const handleChange = useCallback(
-    (value: ValueType) => onChange(value, index),
-    [index, onChange]
-  );
-
+export default ({
+  label = '',
+  index,
+  tabIndex,
+  onChange,
+  ...props
+}: FormItemProps) => {
   return (
     <div className="form-item">
       <label className="form-item__label">{label}</label>
-      <div className="form-item__field">FIELD</div>
+      <Field
+        {...props}
+        className="form-item__field"
+        tabIndex={tabIndex ?? index}
+        onChange={useCallback(
+          (value: Nullable<ValueType>) => onChange(value, index),
+          [index, onChange]
+        )}
+      />
     </div>
   );
 };

@@ -27,7 +27,17 @@ $label_margin: 2px;
   }
 
   &__field {
+    box-sizing: border-box;
     width: 100%;
     margin: $label_margin 0 0 0;
+
+    border: 1px solid $input_border_color;
+    background: $input_background;
+    outline: none;
+
+    &:focus {
+      outline: 1px solid $input_focus_outline;
+
+    }
   }
 }

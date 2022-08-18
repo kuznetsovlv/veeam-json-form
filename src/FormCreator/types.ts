@@ -1,9 +1,16 @@
+export type Nullable<T> = T | null;
+
 export type Mode = 'config' | 'result';
 
 export type FieldType = 'int' | 'string' | 'text' | 'boolean' | 'date' | 'enum';
 
 export interface FieldCommon {
+  autoFocus?: boolean;
+  disabled?: boolean;
   label?: string;
+  name?: string;
+  readOnly?: boolean;
+  tabIndex?: number;
   type: FieldType;
 }
 
@@ -19,8 +26,11 @@ export interface INT {
 }
 
 export interface STRING {
+  autoComplete?: boolean;
+  maxLength?: number;
   value?: string;
   placeholder?: string;
+  spellCheck?: boolean;
   type: 'string';
 }
 
@@ -54,11 +64,10 @@ export type CombinedFieldType = Field<
 >;
 
 export interface ConfigData {
+  id?: string;
   title?: string;
   fields?: CombinedFieldType[];
   buttons?: BUTTON[];
 }
 
-export type Nullable<T> = T | null;
-
-export type ValueType = string | number | boolean | null;
+export type ValueType = string | number | boolean;
