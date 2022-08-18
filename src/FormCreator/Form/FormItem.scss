@@ -1,4 +1,5 @@
 @import '../../colors';
+@import '../../constants';
 
 $field_margin: 8px;
 $label_margin: 2px;
@@ -16,7 +17,7 @@ $label_margin: 2px;
 
   &__label {
     display: block;
-    font-size: 0.7rem;
+    font-size: $label_font_size;
     color: $label_color;
     line-height: 100%;
     margin: 0 0 $label_margin 0;
@@ -40,7 +41,6 @@ $label_margin: 2px;
 
     &:focus {
       outline: 1px solid $input_focus_outline;
-
     }
   }
 }

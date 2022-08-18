@@ -1,6 +1,7 @@
 import React from 'react';
 
 import type { CombinedFieldType, Nullable, ValueType } from '../../types';
+import BooleanInput from './BooleanInput';
 import IntInput from './IntInput';
 import StringInput from './StringInput';
 
@@ -36,7 +37,14 @@ export default ({
     case 'text':
       return <>TEXT</>;
     case 'boolean':
-      return <>BOOLEAN</>;
+      return (
+        <BooleanInput
+          {...props}
+          form={form}
+          value={Boolean(value)}
+          onChange={onChange}
+        />
+      );
     case 'date':
       return <>DATE</>;
     case 'enum':

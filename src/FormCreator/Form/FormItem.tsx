@@ -14,16 +14,21 @@ export default ({
   label = '',
   index,
   tabIndex,
+  type,
   onChange,
   ...props
 }: FormItemProps) => {
   return (
     <div className="form-item">
-      <label className="form-item__label">{label}</label>
+      {type !== 'boolean' && (
+        <label className="form-item__label">{label}</label>
+      )}
       <Field
         {...props}
         className="form-item__field"
+        label={label}
         tabIndex={tabIndex ?? index}
+        type={type}
         onChange={useCallback(
           (value: Nullable<ValueType>) => onChange(value, index),
           [index, onChange]

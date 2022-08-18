@@ -29,25 +29,21 @@ export type INT = {
   max?: number;
   min?: number;
   value?: Nullable<number>;
-  type: 'int';
 } & Input;
 
 export type STRING = {
   maxLength?: number;
   value?: string;
   spellCheck?: boolean;
-  type: 'string';
 } & Input;
 
 export interface TEXT {
   value?: string;
   placeholder?: string;
-  type: 'text';
 }
 
 export interface BOOLEAN {
   value?: boolean;
-  type: 'boolean';
 }
 
 export interface DATE {
@@ -55,13 +51,11 @@ export interface DATE {
   placeholder?: string;
   from?: Date;
   to?: Date;
-  type: 'date';
 }
 
 export interface ENUM {
   value?: string;
   items: { label: string; value: string }[];
-  type: 'enum';
 }
 
 export type CombinedFieldType = Field<

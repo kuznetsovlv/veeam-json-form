@@ -49,7 +49,7 @@ export default ({
     <input
       autoComplete={autoComplete ? 'on' : 'off'}
       autoFocus={autoFocus}
-      className={clsx(className, 'string-input')}
+      className={clsx(className, 'int-input')}
       disabled={disabled || readOnly}
       form={form}
       max={max}
