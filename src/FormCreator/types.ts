@@ -5,13 +5,18 @@ export type Mode = 'config' | 'result';
 export type FieldType = 'int' | 'string' | 'text' | 'boolean' | 'date' | 'enum';
 
 export interface FieldCommon {
-  autoFocus?: boolean;
   disabled?: boolean;
   label?: string;
   name?: string;
-  readOnly?: boolean;
   tabIndex?: number;
   type: FieldType;
+}
+
+export interface Input {
+  autoComplete?: boolean;
+  autoFocus?: boolean;
+  placeholder?: string;
+  readOnly?: boolean;
 }
 
 export type Field<T> = FieldCommon & T;
@@ -20,19 +25,19 @@ export interface BUTTON {
   text: string;
 }
 
-export interface INT {
-  value?: number;
+export type INT = {
+  max?: number;
+  min?: number;
+  value?: Nullable<number>;
   type: 'int';
-}
+} & Input;
 
-export interface STRING {
-  autoComplete?: boolean;
+export type STRING = {
   maxLength?: number;
   value?: string;
-  placeholder?: string;
   spellCheck?: boolean;
   type: 'string';
-}
+} & Input;
 
 export interface TEXT {
   value?: string;

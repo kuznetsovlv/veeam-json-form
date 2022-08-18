@@ -55,6 +55,7 @@
     }
   },
   "rules": {
+    "no-param-reassign": ["off"],
     "prettier/prettier": ["error"],
     "react/display-name": ["off"],
     "react/prop-types": ["off"],
