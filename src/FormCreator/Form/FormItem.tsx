@@ -1,4 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
+// @ts-ignore
+import { v4 } from 'uuid';
 
 import type { CombinedFieldType, Nullable, ValueType } from '../types';
 import Field from './Field';
@@ -18,14 +20,19 @@ export default ({
   onChange,
   ...props
 }: FormItemProps) => {
+  const id = useMemo(() => v4(), [index]);
+
   return (
     <div className="form-item">
       {type !== 'boolean' && (
-        <label className="form-item__label">{label}</label>
+        <label htmlFor={id} className="form-item__label">
+          {label}
+        </label>
       )}
       <Field
         {...props}
         className="form-item__field"
+        id={id}
         label={label}
         tabIndex={tabIndex ?? index}
         type={type}

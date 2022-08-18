@@ -5,6 +5,7 @@ import type { Field, INT, Nullable } from '../../types';
 
 type IntInputProps = Omit<Field<INT>, 'type'> & {
   className?: string;
+  id: string;
   form?: string;
   onChange: (v: Nullable<number>) => void;
 };
@@ -30,6 +31,7 @@ export default ({
   autoFocus = false,
   className,
   disabled = false,
+  id,
   form,
   max = Infinity,
   min = -Infinity,
@@ -51,6 +53,7 @@ export default ({
       autoFocus={autoFocus}
       className={clsx(className, 'int-input')}
       disabled={disabled || readOnly}
+      id={id}
       form={form}
       max={max}
       min={min}

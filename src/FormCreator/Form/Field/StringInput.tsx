@@ -5,6 +5,7 @@ import type { Field, STRING } from '../../types';
 
 type StringInputProps = Omit<Field<STRING>, 'type'> & {
   className?: string;
+  id: string;
   form?: string;
   onChange: (v: string) => void;
 };
@@ -14,6 +15,7 @@ export default ({
   autoFocus = false,
   className,
   disabled = false,
+  id,
   form,
   maxLength,
   placeholder,
@@ -28,6 +30,7 @@ export default ({
     autoFocus={autoFocus}
     className={clsx(className, 'string-input')}
     disabled={disabled || readOnly}
+    id={id}
     form={form}
     maxLength={maxLength}
     placeholder={placeholder}

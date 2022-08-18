@@ -7,12 +7,14 @@ import StringInput from './StringInput';
 
 type FieldProps = CombinedFieldType & {
   className?: string;
+  id: string;
   form?: string;
   onChange: (v: Nullable<ValueType>) => void;
 };
 
 export default ({
   className,
+  id,
   form,
   type,
   value,
@@ -28,6 +30,7 @@ export default ({
         <IntInput
           {...props}
           className={className}
+          id={id}
           form={form}
           value={value}
           onChange={onChange}
@@ -40,6 +43,7 @@ export default ({
       return (
         <BooleanInput
           {...props}
+          id={id}
           form={form}
           value={Boolean(value)}
           onChange={onChange}
@@ -55,6 +59,7 @@ export default ({
         <StringInput
           {...props}
           className={className}
+          id={id}
           form={form}
           value={String(value ?? '')}
           onChange={onChange}
