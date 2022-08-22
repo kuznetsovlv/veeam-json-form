@@ -37,10 +37,16 @@ export type STRING = {
   spellCheck?: boolean;
 } & Input;
 
-export interface TEXT {
+export type TEXT = {
+  autoCorrect?: boolean;
+  cols?: number;
+  maxLength?: number;
+  resizeable?: boolean;
+  rows?: number;
   value?: string;
-  placeholder?: string;
-}
+  spellCheck?: boolean;
+  wrap?: 'hard' | 'soft' | 'off';
+} & Input;
 
 export interface BOOLEAN {
   value?: boolean;

@@ -44,6 +44,14 @@
         }
       ],
       "value": "1"
+    },
+    {
+      "label": "Text field",
+      "placeholder": "text",
+      "type": "text",
+      "value": "Here is a text",
+      "rows": 5,
+      "resizeable": true
     }
   ]
 }

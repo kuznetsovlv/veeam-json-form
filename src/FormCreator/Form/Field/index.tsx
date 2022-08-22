@@ -5,6 +5,7 @@ import BooleanInput from './BooleanInput';
 import EnumField from './EnumField';
 import IntInput from './IntInput';
 import StringInput from './StringInput';
+import TextField from './TextField';
 
 type FieldProps = CombinedFieldType & {
   className?: string;
@@ -39,7 +40,16 @@ export default ({
       );
     }
     case 'text':
-      return <>TEXT</>;
+      return (
+        <TextField
+          {...props}
+          id={id}
+          className={className}
+          form={form}
+          value={String(value ?? '')}
+          onChange={onChange}
+        />
+      );
     case 'boolean':
       return (
         <BooleanInput
