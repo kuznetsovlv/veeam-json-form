@@ -54,9 +54,15 @@ export interface DATE {
   to?: Date;
 }
 
+export interface ENUM_ITEM {
+  autoFocus?: boolean;
+  label: string;
+  value: string;
+}
+
 export interface ENUM {
   value?: string;
-  items: { label: string; value: string }[];
+  items?: ENUM_ITEM[];
 }
 
 export type CombinedFieldType = Field<

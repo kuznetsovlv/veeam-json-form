@@ -20,22 +20,20 @@ export default ({
   tabIndex,
   value = false,
   onChange
-}: BooleanInputInputProps) => {
-  return (
-    <label className="boolean-input" htmlFor={id}>
-      {label}
-      <input
-        autoFocus={autoFocus}
-        checked={value}
-        className={clsx('boolean-input__input', { labeled: !!label })}
-        disabled={disabled}
-        id={id}
-        form={form}
-        name={name}
-        tabIndex={tabIndex}
-        type="checkbox"
-        onChange={() => onChange(!value)}
-      />
-    </label>
-  );
-};
+}: BooleanInputInputProps) => (
+  <label className="boolean-input" htmlFor={id}>
+    {label}
+    <input
+      autoFocus={autoFocus}
+      checked={value}
+      className={clsx('boolean-input__input', { labeled: !!label })}
+      disabled={disabled}
+      id={id}
+      form={form}
+      name={name}
+      tabIndex={tabIndex}
+      type="checkbox"
+      onChange={() => onChange(!value)}
+    />
+  </label>
+);

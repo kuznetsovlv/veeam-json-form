@@ -28,6 +28,22 @@
       "type": "boolean",
       "value": false,
       "name": "bool"
+    },
+    {
+      "label": "enum field",
+      "type": "enum",
+      "items": [
+        {
+          "label": "one",
+          "value": "1"
+        },
+        {
+          "label": "two",
+          "value": "2",
+          "autoFocus": true
+        }
+      ],
+      "value": "1"
     }
   ]
 }

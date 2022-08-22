@@ -2,6 +2,7 @@ import React from 'react';
 
 import type { CombinedFieldType, Nullable, ValueType } from '../../types';
 import BooleanInput from './BooleanInput';
+import EnumField from './EnumField';
 import IntInput from './IntInput';
 import StringInput from './StringInput';
 
@@ -52,7 +53,15 @@ export default ({
     case 'date':
       return <>DATE</>;
     case 'enum':
-      return <>ENUM</>;
+      return (
+        <EnumField
+          {...props}
+          className={className}
+          form={form}
+          value={String(value ?? '')}
+          onChange={onChange}
+        />
+      );
     case 'string':
     default:
       return (

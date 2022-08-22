@@ -1,0 +1,34 @@
+@import 'src/colors';
+@import 'src/constants';
+
+@mixin pick-input-label {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: $pick_size;
+  width: 100%;
+  font-size: $label_font_size;
+  color: $label_color;
+  line-height: 100%;
+
+  &__input {
+    flex: $pick_size 0 0;
+    width: $pick_size;
+    height: $pick_size;
+    padding: 0;
+    margin: 0;
+
+    // TODO: These styles do not afford the field. If I had enough time, I would create special checkbox and radiobutton
+    border: 1px solid $input_border_color;
+    outline: none;
+    border-radius: $input_border_radius;
+    background: $input_background;
+
+    &:focus {
+      outline: 1px solid $input_focus_outline;
+    }
+  }
+
+}

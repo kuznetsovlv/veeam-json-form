@@ -20,7 +20,7 @@ export default ({
   onChange,
   ...props
 }: FormItemProps) => {
-  const id = useMemo(() => v4(), [index]);
+  const id = useMemo(() => v4(), []);
 
   return (
     <div className="form-item">
