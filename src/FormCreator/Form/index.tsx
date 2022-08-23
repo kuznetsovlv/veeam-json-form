@@ -17,7 +17,16 @@ export default ({ data, onConfigChange }: FormProps) => {
     [currentData]
   );
 
-  const { id, title, fields = [], buttons = [] } = currentData;
+  const {
+    id,
+    action,
+    autoComplete = false,
+    target = 'self',
+    method,
+    title,
+    fields = [],
+    buttons = []
+  } = currentData;
 
   const handleChange = useCallback(
     (value: Nullable<ValueType>, index: number) => {
@@ -34,7 +43,14 @@ export default ({ data, onConfigChange }: FormProps) => {
   );
 
   return (
-    <form className="form" id={id}>
+    <form
+      action={action}
+      autoComplete={autoComplete ? 'on' : 'off'}
+      className="form"
+      id={id}
+      method={method}
+      target={`_${target}`}
+    >
       <header className="form__title">{title}</header>
       <div className="form__fields">
         {fields.map((props, index) => (

@@ -23,6 +23,7 @@ export type Field<T> = FieldCommon & T;
 
 export interface BUTTON {
   text: string;
+  type?: 'submit' | 'button';
 }
 
 export type INT = {
@@ -79,7 +80,11 @@ export type CombinedFieldType = Field<
 >;
 
 export interface ConfigData {
+  autoComplete?: boolean;
+  action?: string;
   id?: string;
+  method?: 'get' | 'post';
+  target?: 'blank' | 'self' | 'parent' | 'top',
   title?: string;
   fields?: CombinedFieldType[];
   buttons?: BUTTON[];
