@@ -54,10 +54,13 @@ export interface BOOLEAN {
 }
 
 export interface DATE {
-  value?: Date;
+  autoFocus?: boolean;
+  clearable?: boolean;
+  from?: string;
   placeholder?: string;
-  from?: Date;
-  to?: Date;
+  readOnly?: boolean;
+  to?: string;
+  value?: Nullable<string>;
 }
 
 export interface ENUM_ITEM {

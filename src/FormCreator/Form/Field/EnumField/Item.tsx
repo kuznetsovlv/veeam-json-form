@@ -39,7 +39,7 @@ export default ({
         tabIndex={tabIndex}
         type="radio"
         value={value}
-        onClick={() => onClick(value)}
+        onChange={() => onClick(value)}
       />
       {label ?? value}
     </label>
