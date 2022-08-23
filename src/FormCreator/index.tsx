@@ -1,5 +1,4 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
 import clsx from 'clsx';
 
 import ConfigEditor from './ConfigEditor';
@@ -13,11 +12,9 @@ interface FormCreatorProps {
 }
 
 export default ({ className }: FormCreatorProps) => {
-  const [mode, setMode]: [Mode, Dispatch<SetStateAction<Mode>>] = useState(
-    'config' as Mode
-  );
+  const [mode, setMode] = useState<Mode>('config');
 
-  const [config, setConfig] = useState('');
+  const [config, setConfig] = useState<string>('');
 
   const configData: Nullable<ConfigData> = useMemo(() => {
     if (!config) {
