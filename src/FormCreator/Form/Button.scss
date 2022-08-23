@@ -5,13 +5,17 @@ $button_margin: 5px;
 $shadow: 1px 1px 1px #999;
 
 .button {
-  margin: 0;
+  margin: 4px 0;
   border-radius: 15px;
-  padding: 5px 15px;
+  padding: 2px 15px;
   font-size: 0.8rem;
   line-height: 100%;
   cursor: pointer;
   outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 
   box-shadow: $shadow;
 

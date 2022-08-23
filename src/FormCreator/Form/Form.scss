@@ -1,4 +1,4 @@
-@import "src/colors";
+@import 'src/colors';
 
 $title_height: 36px;
 $buttons_height: 35px;
@@ -31,21 +31,23 @@ $block_margin: 10px;
     flex-wrap: nowrap;
     padding: $block_padding;
     margin: $block_margin 0;
-    height: calc(100% - $buttons_height - $title_height - 2 * $block_margin - 6 * $block_padding);
+    height: calc(
+      100% - $buttons_height - $title_height - 2 * $block_margin - 6 *
+        $block_padding
+    );
     overflow-x: hidden;
     overflow-y: auto;
   }
-
 
   &__buttons {
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: flex-end;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: $block_padding;
     margin-top: $block_margin;
     height: $buttons_height;
-    overflow-x: auto;
+    overflow: auto;
   }
 }
