@@ -39,9 +39,9 @@ export default ({
   readOnly = false,
   tabIndex,
   value = null,
-  onChange
+  onChange // eslint-disable-next-line sonarjs/cognitive-complexity
 }: IntInputProps) => {
-  const [currentValue, setCurrentValue] = useState(
+  const [currentValue, setCurrentValue] = useState<string>(
     value === null || isNaN(value) ? '' : String(value)
   );
   max = Math.ceil(max);
