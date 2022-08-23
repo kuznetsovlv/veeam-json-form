@@ -1,3 +1,4 @@
+@import 'src/colors';
 @import 'src/constants';
 
 // Copied from react-datepicker's css to support styles
@@ -665,8 +666,8 @@
 }
 .react-datepicker__close-icon::after {
   cursor: pointer;
-  background-color: #216ba5;
-  color: #fff;
+  background-color: $reset_background; // Changed clear-button background
+  color: $reset_text_color; // Changed clear-button text color
   border-radius: 50%;
   height: 16px;
   width: 16px;
