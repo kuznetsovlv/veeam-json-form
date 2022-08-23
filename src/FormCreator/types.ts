@@ -21,9 +21,12 @@ export interface Input {
 
 export type Field<T> = FieldCommon & T;
 
+export type ButtonType = 'submit' | 'button' | 'reset';
+
 export interface BUTTON {
+  disabled?: boolean;
   text: string;
-  type?: 'submit' | 'button';
+  type?: ButtonType;
 }
 
 export type INT = {
@@ -84,7 +87,7 @@ export interface ConfigData {
   action?: string;
   id?: string;
   method?: 'get' | 'post';
-  target?: 'blank' | 'self' | 'parent' | 'top',
+  target?: 'blank' | 'self' | 'parent' | 'top';
   title?: string;
   fields?: CombinedFieldType[];
   buttons?: BUTTON[];

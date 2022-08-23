@@ -1,0 +1,45 @@
+@import 'src/colors';
+
+$button_margin: 5px;
+
+$shadow: 1px 1px 1px #999;
+
+.button {
+  margin: 0;
+  border-radius: 15px;
+  padding: 5px 15px;
+  font-size: 0.8rem;
+  line-height: 100%;
+  cursor: pointer;
+  outline: none;
+
+  box-shadow: $shadow;
+
+  &:active {
+    box-shadow: inset $shadow;
+  }
+
+  &:not(:first-child) {
+    margin-left: $button_margin;
+  }
+
+  &:not(:last-child) {
+    margin-right: $button_margin;
+  }
+
+  &__button {
+    background: $button_background;
+    border: 1.5px solid $button_border_color;
+  }
+
+  &__reset {
+    background: $reset_background;
+    border: 1.5px solid $reset_border_color;
+    color: $reset_text_color;
+  }
+
+  &__submit {
+    background: $submit_background;
+    border: 1.5px solid $submit_border_color;
+  }
+}

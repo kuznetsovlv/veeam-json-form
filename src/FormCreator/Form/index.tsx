@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-import type { ConfigData, Nullable, ValueType } from '../types';
+import type { ButtonType, ConfigData, Nullable, ValueType } from '../types';
+import Button from './Button';
 import FormItem from './FormItem';
 import './Form.scss';
 
@@ -9,8 +10,19 @@ interface FormProps {
   onConfigChange: (v: string) => void;
 }
 
+const __typeParse = (type?: ButtonType) => {
+  switch (type) {
+    case 'button':
+    case 'reset':
+    case 'submit':
+      return type;
+    default:
+      return 'button';
+  }
+};
+
 export default ({ data, onConfigChange }: FormProps) => {
-  const [currentData, setCurrentData] = useState(data);
+  const [currentData, setCurrentData] = useState<ConfigData>(data);
 
   useEffect(
     () => () => onConfigChange(JSON.stringify(currentData, null, 4)),
@@ -65,7 +77,11 @@ export default ({ data, onConfigChange }: FormProps) => {
           />
         ))}
       </div>
-      <div className="form__buttons">Buttons</div>
+      <div className="form__buttons">
+        {buttons.map(({ type, text, ...props }) => (
+          <Button key={text} {...props} text={text} type={__typeParse(type)} />
+        ))}
+      </div>
     </form>
   );
 };

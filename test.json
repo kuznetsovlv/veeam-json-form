@@ -21,7 +21,7 @@
       "type": "int",
       "min": 10,
       "max": 20,
-      "value": 10
+      "value": 20
     },
     {
       "label": "boolean field",
@@ -59,6 +59,29 @@
       "clearable": true,
       "type": "date",
       "value": "2022-08-02"
+    },
+    {
+      "label": "Date field 2",
+      "placeholder": "date",
+      "type": "date",
+      "value": "2022-08-17"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Button"
+    },
+    {
+      "text": "Button 2",
+      "type": "button"
+    },
+    {
+      "text": "Reset",
+      "type": "reset"
+    },
+    {
+      "text": "Submit",
+      "type": "submit"
     }
   ]
 }
