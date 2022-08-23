@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 // @ts-ignore
 import DatePicker from 'react-datepicker';
 import { format, parse } from 'date-fns';
@@ -58,7 +58,10 @@ export default ({
       selected={selected}
       startDate={startDate}
       tabIndex={tabIndex}
-      onChange={(date: Date) => onChange(date ? format(date, FORMAT) : null)}
+      onChange={useCallback(
+        (date: Date) => onChange(date ? format(date, FORMAT) : null),
+        [onChange]
+      )}
     />
   );
 };
