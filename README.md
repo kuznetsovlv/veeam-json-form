@@ -1,6 +1,116 @@
-# Getting Started with Create React App
+# Test task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project test task for position React developer.\
+It was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Task
+
+Create React app using TypeScript for generating forms by JSON config.
+
+Application must contain two tabs:
+* Config - to enter configuration with JSON.
+* Result - to display resulting form.
+
+Application should be enable to generate forms with any number of fields.\
+Available field types:
+* Integer
+* String
+* Text (multi string)
+* Boolean (checkbox) 
+* Enumerate (radio button)
+
+Also, application must allow to set form's title and button's count and their text.
+
+### Config example
+```json
+{
+  "id": "form",
+  "title": "TITLE",
+  "fields": [
+    {
+      "label": "string field",
+      "type": "string",
+      "value": "cxvcv",
+      "name": "first",
+      "readOnly": true
+    },
+    {
+      "label": "second string field",
+      "type": "string",
+      "value": "second",
+      "name": "second",
+      "autoComplete": true
+    },
+    {
+      "label": "int field",
+      "type": "int",
+      "min": 10,
+      "max": 20,
+      "value": 20
+    },
+    {
+      "label": "boolean field",
+      "type": "boolean",
+      "value": false,
+      "name": "bool"
+    },
+    {
+      "label": "enum field",
+      "type": "enum",
+      "items": [
+        {
+          "label": "one",
+          "value": "1"
+        },
+        {
+          "label": "two",
+          "value": "2",
+          "autoFocus": true
+        }
+      ],
+      "value": "1"
+    },
+    {
+      "label": "Text field",
+      "placeholder": "text",
+      "type": "text",
+      "value": "Here is a text",
+      "rows": 5,
+      "resizeable": true
+    },
+    {
+      "label": "Date field",
+      "placeholder": "date",
+      "clearable": true,
+      "type": "date",
+      "value": "2022-08-02"
+    },
+    {
+      "label": "Date field 2",
+      "placeholder": "date",
+      "type": "date",
+      "value": "2022-08-17"
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Button"
+    },
+    {
+      "text": "Button 2",
+      "type": "button"
+    },
+    {
+      "text": "Reset",
+      "type": "reset"
+    },
+    {
+      "text": "Submit",
+      "type": "submit"
+    }
+  ]
+}
+```
 
 ## Available Scripts
 
@@ -17,7 +127,7 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tests haven't been written excepts tests that was created by [Create React App](https://github.com/facebook/create-react-app).
 
 ### `npm run build`
 
@@ -29,18 +139,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run lint`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Runs check code with eslint. If there are problems, they will be shown in the console.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 'npm run lint:fix'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Like `npm run lint` but tries to fix problems.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `npm run prettier`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Runs prettier to fix code layout.
