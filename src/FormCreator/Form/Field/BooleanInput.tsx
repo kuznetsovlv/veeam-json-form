@@ -11,7 +11,6 @@ type BooleanInputInputProps = Omit<Field<BOOLEAN>, 'type'> & {
 };
 
 export default ({
-  autoFocus = false,
   disabled,
   id,
   form,
@@ -24,9 +23,7 @@ export default ({
   <label className="boolean-input" htmlFor={id}>
     {label}
     <input
-      autoFocus={autoFocus}
       checked={value}
-      className={clsx('boolean-input__input', { labeled: !!label })}
       disabled={disabled}
       id={id}
       form={form}
@@ -35,5 +32,13 @@ export default ({
       type="checkbox"
       onChange={() => onChange(!value)}
     />
+    <div
+      className={clsx('boolean-input__input', {
+        labeled: !!label,
+        checked: value
+      })}
+    >
+      <div />
+    </div>
   </label>
 );

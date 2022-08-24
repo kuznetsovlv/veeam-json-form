@@ -6,8 +6,13 @@
   @include pick-input-label;
 
   &__input {
+    border-radius: $input_border_radius;
     &.labeled {
       margin-left: 5px;
+    }
+
+    div {
+      border-radius: calc($input_border_radius / 2);
     }
   }
 }

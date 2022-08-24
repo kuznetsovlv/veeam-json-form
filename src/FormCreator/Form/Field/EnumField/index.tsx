@@ -28,10 +28,9 @@ export default ({
 
   return (
     <fieldset className={clsx(className, 'enum')}>
-      {items.map(({ autoFocus, value, label }, index) => (
+      {items.map(({ value, label }, index) => (
         <Item
           key={value}
-          autoFocus={autoFocus}
           form={form}
           label={label}
           disabled={disabled}

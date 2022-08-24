@@ -54,7 +54,6 @@ export type TEXT = {
 
 export interface BOOLEAN {
   value?: boolean;
-  autoFocus?: boolean;
 }
 
 export interface DATE {
@@ -68,7 +67,6 @@ export interface DATE {
 }
 
 export interface ENUM_ITEM {
-  autoFocus?: boolean;
   label: string;
   value: string;
 }

@@ -9,5 +9,10 @@
 
   &__input {
     margin-right: 5px;
+    border-radius: 50%;
+
+    div {
+      border-radius: 50%;
+    }
   }
 }

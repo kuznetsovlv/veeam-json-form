@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 
 import type { ENUM_ITEM } from '../../../types';
 import './Item.scss';
+import clsx from 'clsx';
 
 type ItemProps = ENUM_ITEM & {
   disabled: boolean;
@@ -15,7 +16,6 @@ type ItemProps = ENUM_ITEM & {
 };
 
 export default ({
-  autoFocus = false,
   disabled,
   form,
   label,
@@ -29,9 +29,7 @@ export default ({
   return (
     <label className="item" htmlFor={id}>
       <input
-        autoFocus={autoFocus}
         checked={checked}
-        className="item__input"
         disabled={disabled}
         form={form}
         id={id}
@@ -40,7 +38,11 @@ export default ({
         type="radio"
         value={value}
         onChange={() => onClick(value)}
+        onFocus={console.log}
       />
+      <div className={clsx('item__input', { checked })}>
+        <div />
+      </div>
       {label ?? value}
     </label>
   );
