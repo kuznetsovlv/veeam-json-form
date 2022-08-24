@@ -8,20 +8,23 @@ It was bootstrapped with [Create React App](https://github.com/facebook/create-r
 Create React app using TypeScript for generating forms by JSON config.
 
 Application must contain two tabs:
-* Config - to enter configuration with JSON.
-* Result - to display resulting form.
+
+- Config - to enter configuration with JSON.
+- Result - to display resulting form.
 
 Application should be enable to generate forms with any number of fields.\
 Available field types:
-* Integer
-* String
-* Text (multi string)
-* Boolean (checkbox) 
-* Enumerate (radio button)
+
+- Integer
+- String
+- Text (multi string)
+- Boolean (checkbox)
+- Enumerate (radio button)
 
 Also, application must allow to set form's title and button's count and their text.
 
 ### Config example
+
 ```json
 {
   "id": "form",

@@ -30,9 +30,9 @@
     outline: none;
     background: $input_background;
 
-      &.checked>div {
-        background: #00f;
-        height: 100%;
-      }
+    &.checked > div {
+      background: #00f;
+      height: 100%;
+    }
   }
 }
