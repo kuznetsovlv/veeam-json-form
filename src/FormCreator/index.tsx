@@ -1,11 +1,13 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, lazy } from 'react';
 import clsx from 'clsx';
 
+import LazyComponent from '../LazyComponent';
 import ConfigEditor from './ConfigEditor';
-import Form from './Form';
 import Tabs from './Tabs';
 import type { Mode, ConfigData, Nullable } from './types';
 import './FormCreator.scss';
+
+const Form = lazy(() => import('./Form'));
 
 interface FormCreatorProps {
   className?: string;
@@ -42,7 +44,9 @@ export default ({ className }: FormCreatorProps) => {
           <ConfigEditor value={config} onChange={setConfig} />
         )}
         {mode === 'result' && !!configData && (
-          <Form data={configData} onConfigChange={setConfig} />
+          <LazyComponent>
+            <Form data={configData} onConfigChange={setConfig} />
+          </LazyComponent>
         )}
       </div>
     </div>

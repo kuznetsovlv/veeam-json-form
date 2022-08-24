@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
+import LazyComponent from '../../../LazyComponent';
 import type { CombinedFieldType, Nullable, ValueType } from '../../types';
-import BooleanInput from './BooleanInput';
-import DateField from './DateField';
-import EnumField from './EnumField';
-import IntInput from './IntInput';
-import StringInput from './StringInput';
-import TextField from './TextField';
+
+const BooleanInput = lazy(() => import('./BooleanInput'));
+const DateField = lazy(() => import('./DateField'));
+const EnumField = lazy(() => import('./EnumField'));
+const IntInput = lazy(() => import('./IntInput'));
+const StringInput = lazy(() => import('./StringInput'));
+const TextField = lazy(() => import('./TextField'));
 
 type FieldProps = CombinedFieldType & {
   className?: string;
@@ -30,68 +32,80 @@ export default ({
         value = Number(value);
       }
       return (
-        <IntInput
-          {...props}
-          className={className}
-          id={id}
-          form={form}
-          value={value}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <IntInput
+            {...props}
+            className={className}
+            id={id}
+            form={form}
+            value={value}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
     }
     case 'text':
       return (
-        <TextField
-          {...props}
-          id={id}
-          className={className}
-          form={form}
-          value={String(value ?? '')}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <TextField
+            {...props}
+            id={id}
+            className={className}
+            form={form}
+            value={String(value ?? '')}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
     case 'boolean':
       return (
-        <BooleanInput
-          {...props}
-          id={id}
-          form={form}
-          value={Boolean(value)}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <BooleanInput
+            {...props}
+            id={id}
+            form={form}
+            value={Boolean(value)}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
     case 'date':
       return (
-        <DateField
-          {...props}
-          className={className}
-          id={id}
-          value={String(value ?? '')}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <DateField
+            {...props}
+            className={className}
+            id={id}
+            value={String(value ?? '')}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
     case 'enum':
       return (
-        <EnumField
-          {...props}
-          className={className}
-          form={form}
-          value={String(value ?? '')}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <EnumField
+            {...props}
+            className={className}
+            form={form}
+            value={String(value ?? '')}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
     case 'string':
     default:
       return (
-        <StringInput
-          {...props}
-          className={className}
-          id={id}
-          form={form}
-          value={String(value ?? '')}
-          onChange={onChange}
-        />
+        <LazyComponent>
+          <StringInput
+            {...props}
+            className={className}
+            id={id}
+            form={form}
+            value={String(value ?? '')}
+            onChange={onChange}
+          />
+        </LazyComponent>
       );
   }
 };
