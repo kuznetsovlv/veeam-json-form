@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import type { ChangeEvent } from 'react';
 import clsx from 'clsx';
 
 import type { Field, TEXT } from '../../types';
@@ -50,6 +51,10 @@ export default ({
     tabIndex={tabIndex}
     value={value}
     wrap={wrap}
-    onChange={({ target: { value } }) => onChange(value)}
+    onChange={useCallback(
+      ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) =>
+        onChange(value),
+      [onChange]
+    )}
   />
 );

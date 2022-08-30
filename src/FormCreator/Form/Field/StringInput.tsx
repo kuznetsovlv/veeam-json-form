@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import type { ChangeEvent } from 'react';
 import clsx from 'clsx';
 
 import type { Field, STRING } from '../../types';
@@ -39,6 +40,9 @@ export default ({
     tabIndex={tabIndex}
     type="text"
     value={value}
-    onChange={({ target: { value } }) => onChange(value)}
+    onChange={useCallback(
+      ({ target: { value } }: ChangeEvent<HTMLInputElement>) => onChange(value),
+      [onChange]
+    )}
   />
 );

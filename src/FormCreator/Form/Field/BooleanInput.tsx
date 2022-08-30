@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import clsx from 'clsx';
 
 import type { Field, BOOLEAN } from '../../types';
@@ -30,7 +30,7 @@ export default ({
       name={name}
       tabIndex={tabIndex}
       type="checkbox"
-      onChange={() => onChange(!value)}
+      onChange={useCallback(() => onChange(!value), [value, onChange])}
     />
     <div
       className={clsx('boolean-input__input', {

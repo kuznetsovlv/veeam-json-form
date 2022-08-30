@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import type { ChangeEvent } from 'react';
 
 import './ConfigEditor.scss';
 
@@ -14,6 +15,10 @@ export default ({ value, onChange }: ConfigEditorProps) => (
     spellCheck
     value={value}
     wrap="soft"
-    onChange={({ target: { value } }) => onChange(value)}
+    onChange={useCallback(
+      ({ target: { value } }: ChangeEvent<HTMLTextAreaElement>) =>
+        onChange(value),
+      [onChange]
+    )}
   />
 );

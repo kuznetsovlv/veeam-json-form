@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import type { ChangeEvent } from 'react';
 import clsx from 'clsx';
 
 import type { Field, INT, Nullable } from '../../types';
@@ -63,26 +64,29 @@ export default ({
       tabIndex={tabIndex}
       type="number"
       value={currentValue}
-      onChange={({ target: { value } }) => {
-        if (/\./.test(value)) {
-          setCurrentValue(value.replace('.', ''));
-          return;
-        }
-        if (!value) {
-          onChange(null);
-        } else {
-          const numericValue = Number(value);
-          if (
-            !isNaN(numericValue) &&
-            __toBound(numericValue, min, max) === numericValue
-          ) {
-            onChange(numericValue);
+      onChange={useCallback(
+        ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {
+          if (/\./.test(value)) {
+            setCurrentValue(value.replace('.', ''));
+            return;
           }
-        }
+          if (!value) {
+            onChange(null);
+          } else {
+            const numericValue = Number(value);
+            if (
+              !isNaN(numericValue) &&
+              __toBound(numericValue, min, max) === numericValue
+            ) {
+              onChange(numericValue);
+            }
+          }
 
-        setCurrentValue(value);
-      }}
-      onBlur={() => {
+          setCurrentValue(value);
+        },
+        [setCurrentValue, onChange]
+      )}
+      onBlur={useCallback(() => {
         let newValue: Nullable<number> = currentValue
           ? Number(currentValue)
           : null;
@@ -95,7 +99,7 @@ export default ({
         if (newValue !== value) {
           onChange(newValue);
         }
-      }}
+      }, [currentValue, onChange])}
     />
   );
 };

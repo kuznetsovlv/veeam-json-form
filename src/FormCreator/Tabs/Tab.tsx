@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import clsx from 'clsx';
 
 import type { Mode } from '../types';
@@ -25,11 +25,11 @@ export default ({
       disabled,
       active: !disabled && !selected
     })}
-    onClick={() => {
+    onClick={useCallback(() => {
       if (!disabled) {
         onClick(mode);
       }
-    }}
+    }, [disabled, mode, onClick])}
   >
     {children}
   </div>
