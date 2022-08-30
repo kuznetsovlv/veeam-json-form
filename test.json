@@ -39,8 +39,7 @@
         },
         {
           "label": "two",
-          "value": "2",
-          "autoFocus": true
+          "value": "2"
         }
       ],
       "value": "1"
